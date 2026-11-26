@@ -40,6 +40,8 @@ module half_adder (
         xor_gate u_xor (.a(a), .b(b), .y(sum));
         and_gate u_and (.a(a), .b(b), .y(carry));
 
+endmodule
+
 //-----main module; Full Adder-----
 
 module full_adder (
@@ -53,6 +55,6 @@ module full_adder (
 
         half_adder u_ha1 (.a(a),   .b(b),     .sum(s1),     .carry(c1));
         half_adder u_ha2 (.a(s1),  .b(cin),   .sum(sum),    .carry(c2));
-        or_gate    u_or  (.a(c1),  .b(c2),    .sum(cout));
+        or_gate    u_or  (.a(c1),  .b(c2),    .y(cout));
 
 endmodule
